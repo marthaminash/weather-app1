@@ -173,7 +173,12 @@ h1, h2{
     margin: 0 auto;
 }
 
-
+.open-source{
+    margin-left: 264px;
+}
+.open-source a{
+    text-decoration: none;
+}
 
 
 
