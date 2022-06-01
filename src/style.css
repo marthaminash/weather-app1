@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Lato:wght@300;400&display=swap");
 body {
     background-color: #f9f7fe;
+    color: #C3C7F1;
 }
 h1, h2{
     font-family: "Koulen", cursive;
@@ -40,31 +41,36 @@ h1, h2{
     margin-right: 10px;
 }
 
+#search-form{
+    border-radius: 25px;
+}
+
 .search-button {
     border: none;
     background-color: #2c2c56;
     padding: 10px;
-    color: #ffffff;
+    color: #C3C7F1;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 25px;
 }
 .search-button:hover {
     cursor: pointer;
-    background: #ffffff;
+    background: #C3C7F1;
     color: #2c2c56;
 }
 
 .current-location{
-    margin-top: 36px;
+    margin-top: 40px;
 }
 .current-location a {
-    color: #ffffff;
+    color: #C3C7F1;
     padding: 12px 14px;
     border-radius: 50%;
     background-color: #2c2c56;
 }
 .current-location a:hover {
     cursor: pointer;
-    background: #ffffff;
+    background: #C3C7F1;
     color: #2c2c56;
 }
 
@@ -75,6 +81,7 @@ h1, h2{
     border-radius: 25px;
     width: 800px;
     display: grid;
+    padding: 10px 0;
 }
 
 .block-1{
