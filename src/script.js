@@ -45,7 +45,7 @@ function search(city) {
 }
 
 function displayWeatherCondition(response) {
-    console.log(response.data);
+    console.log(response);
     document.querySelector("#city").innerHTML =
         response.data.name + ", " + response.data.sys.country;
     document.querySelector("#current-temperature-value").innerHTML = Math.round(
@@ -67,7 +67,30 @@ function displayWeatherCondition(response) {
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#pressure").innerHTML =
         response.data.main.pressure / 100;
+
+    let weatherEmoji = document.querySelector("#weather-emoji-picture");
+    let currentWeatherDescription = response.data.weather[0].main;
+    let readyWeatherDescription = currentWeatherDescription.trim();
+    
+    if(readyWeatherDescription === "Thunderstorm"){
+        weatherEmoji.setAttribute("src", "img/Thunderstorm.png")
+    }else if (readyWeatherDescription === "Drizzle"){
+        weatherEmoji.setAttribute("src", "img/Drizzle.png")
+    }else if (readyWeatherDescription === "Rain"){
+        weatherEmoji.setAttribute("src", "img/Rain.png")
+    }else if (readyWeatherDescription === "Snow"){
+        weatherEmoji.setAttribute("src", "img/Snow.png")
+    }else if (readyWeatherDescription === "Mist" || readyWeatherDescription === "Smoke" || readyWeatherDescription === "Haze"
+    || readyWeatherDescription === "Dust" || readyWeatherDescription === "Fog" || readyWeatherDescription === "Sand" || 
+    readyWeatherDescription === "Ash" || readyWeatherDescription === "Squall" || readyWeatherDescription === "Tornado"){
+        weatherEmoji.setAttribute("src", "img/Mist.png")
+    }else if (readyWeatherDescription === "Clear"){
+        weatherEmoji.setAttribute("src", "img/Clear.png")
+    }else if (readyWeatherDescription === "Clouds"){
+        weatherEmoji.setAttribute("src", "img/Clouds.png")
+    }
 }
+
 
 function searchCityFunction(event) {
     event.preventDefault();
