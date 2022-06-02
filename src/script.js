@@ -89,8 +89,9 @@ function displayWeatherCondition(response) {
     }else if (readyWeatherDescription === "Clouds"){
         weatherEmoji.setAttribute("src", "img/Clouds.png")
     }
-}
 
+    celsiusTemperature = response.data.main.temp;
+}
 
 function searchCityFunction(event) {
     event.preventDefault();
@@ -102,5 +103,34 @@ citySearchForm.addEventListener("submit", searchCityFunction);
 
 let currentLocationButton = document.querySelector(".current-location-btn");
 currentLocationButton.addEventListener("click", displayCurrentLocation);
+
+function displayFahrenheitTemperature(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#current-temperature-value");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheitTemperature = Math.round((celsiusTemperature * 9/5) + 32);
+    temperatureElement.innerHTML = fahrenheitTemperature;
+    let currentUnitSign = document.querySelector("#current-unit-sign");
+    currentUnitSign.innerHTML = "°F";
+}
+
+function displayCelsiusTemperature(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#current-temperature-value");
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    let currentUnitSign = document.querySelector("#current-unit-sign");
+    currentUnitSign.innerHTML = "°C";
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("New York");
