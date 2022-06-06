@@ -27,8 +27,8 @@ h1, h2{
 .current-location{
     grid-row: 1/2;
     grid-column: 1/2;
-    text-align: center;
-    margin-top: 30px;
+    text-align: end;
+    margin-right: 10px;
 }
 .input-group{
     width: 400px;
@@ -142,25 +142,6 @@ h1, h2{
     grid-column: 3/4;
 }
 
-.unit-conversion-section {
-    font-size: 14px;
-    grid-row: 3/4;
-    grid-column: 4/5;
-
-}
-
-.unit-conversion-section a{
-    color: #C3C7F1;
-}
-
-.unit-conversion-section a:hover{
-    color: #7A5BB8;
-    text-decoration: none;
-}
-.unit-conversion-section .active{
-    color: #7A5BB8;
-    text-decoration: none;
-}
 .this-week-header{
     grid-row: 1/2;
     grid-column: 1/-1;
